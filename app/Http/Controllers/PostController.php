@@ -13,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         $datas = Category::all();
-        $models = Post::all();
+        $models = Post::orderBy('id','asc')->paginate(10);
         return view('Post.index', ['models' => $models,'datas' => $datas]);
     }
     public function create()
@@ -51,7 +51,7 @@ class PostController extends Controller
     }
     public function search(Request $request)
     {
-        $models = Post::where('name', 'like', '%' . $request->search . '%')->orderBy('id', 'asc')->paginate(5);
+        $models = Post::where('title', 'like', '%' . $request->search . '%')->orderBy('id', 'asc')->paginate(5);
         return response()->json($models);
     }
 }

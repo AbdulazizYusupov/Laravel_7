@@ -37,19 +37,11 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-8">
                         <form action="{{ route('post.search') }}" method="get">
                             @csrf
-                            <input type="text" class="form-control" id="searchinput" name="search">
-                    </div>
-                    <div class="col-2">
-                        <button type="submit" class="btn btn-outline-success" name="ok"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="24" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                            </svg></button>
-                        </form>
+                            <input type="text" placeholder="Search" class="form-control" id="searchinput" name="search">
+
                     </div>
                 </div>
 
@@ -102,10 +94,11 @@
                                                             <div class="modal-body">
                                                                 <input type="hidden" name="id"
                                                                     value="{{ $model->id }}">
-                                                                <input type="text" name="title"
+                                                                <input class="form-control" type="text" name="title"
                                                                     value="{{ $model->title }}"><br><br>
-                                                                <input type="text" value="{{ $model->body }}" name="body" ><br><br>
-                                                                <select name="category_id">
+                                                                <input class="form-control" type="text"
+                                                                    value="{{ $model->body }}" name="body"><br><br>
+                                                                <select class="form-select" name="category_id">
                                                                     @foreach ($datas as $data)
                                                                         <option value="{{ $data->id }}">
                                                                             {{ $data->name }}</option>
@@ -139,6 +132,11 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="col">
+                            <div class="me-3">
+                                {{ $models->links() }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -165,7 +163,8 @@
                         rows += `
                         <tr class="align-middle">
                             <th>${model.id}</th>
-                            <td>${model.name}</td>
+                            <td>${model.title}</td>
+                            <td>${model.body}</td>
                             <td>
                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#edit${model.id}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

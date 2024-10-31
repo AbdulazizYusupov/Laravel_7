@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $models = Category::all();
+        $models = Category::orderBy('id','asc')->paginate(10);
         return view('Category.index',['models' => $models]);
     }
     public function create()

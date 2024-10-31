@@ -1,204 +1,294 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('Layouts.mainPage')
 
-<head>
+@section('content')
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<main class="main">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
 
-    <!-- Custom fonts for this template-->
-    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css" rel="stylesheet') }}" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+        <div id="hero-carousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
 
-    <!-- Custom styles for this template-->
-    <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <div class="carousel-container">
+                    <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Venture</span></h2>
+                    <p class="animate__animated animate__fadeInUp">Yangiliklar Olamiga Xush Kelibsiz
+                        Eng so'nggi voqealar va tahlillar bilan tanishing. Har kuni yangilangan maqolalar, qiziqarli
+                        intervyular va o'ziga xos tahlillar sizni kutmoqda. Barcha muhim yangiliklar bilan birinchi
+                        bo'lib tanishing!</p>
+                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Batafsil</a>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <h2 class="animate__animated animate__fadeInDown">Eng Qiziqarli Yangiliklar</h2>
+                    <p class="animate__animated animate__fadeInUp">
+                        So'nggi voqealar, tahlillar va maqolalar bilan tanishing. Har kuni yangilanadigan
+                        kontentimizda sizni qiziqtiradigan hamma narsa mavjud. O'zingizni yangiliklar olamida
+                        yo'qotmang!</p>
+                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Batafsil</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <div class="carousel-container">
+                    <h2 class="animate__animated animate__fadeInDown">Eng So'nggi Yangiliklar</h2>
+                    <p class="animate__animated animate__fadeInUp">Bizning saytda eng dolzarb voqealar va ularning
+                        tahlillari bilan tanishing. Siz uchun tayyorlangan yangiliklar har doim birinchi bo'lib
+                        sizga yetkaziladi.</p>
+                    <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Batafsil</a>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
             </a>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+            <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
+        </div>
 
-        </ul>
-        <!-- End of Sidebar -->
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                </path>
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3"></use>
+            </g>
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="0"></use>
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9"></use>
+            </g>
+        </svg>
 
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+    </section>
 
-            <!-- Main Content -->
-            <div id="content">
+    <section id="recent-posts" class="recent-posts section">
 
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Post news</h2>
+            <p>Recent Posts of news<br></p>
+        </div><!-- End Section Title -->
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+        <div class="container">
 
-                    <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small"
-                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
+            <div class="row gy-4">
+
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <article>
+
+                        <div class="post-img">
+                            <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <p class="post-category">Politics</p>
+
+                        <h2 class="title">
+                            <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
+                        </h2>
+
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/blog/blog-author.jpg" alt=""
+                                class="img-fluid post-author-img flex-shrink-0">
+                            <div class="post-meta">
+                                <p class="post-author">Maria Doe</p>
+                                <p class="post-date">
+                                    <time datetime="2022-01-01">Jan 1, 2022</time>
+                                </p>
                             </div>
                         </div>
-                    </form>
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    </article>
+                </div><!-- End post list item -->
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <article>
+
+                        <div class="post-img">
+                            <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
+                        </div>
+
+                        <p class="post-category">Sports</p>
+
+                        <h2 class="title">
+                            <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
+                        </h2>
+
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/blog/blog-author-2.jpg" alt=""
+                                class="img-fluid post-author-img flex-shrink-0">
+                            <div class="post-meta">
+                                <p class="post-author">Allisa Mayer</p>
+                                <p class="post-date">
+                                    <time datetime="2022-01-01">Jun 5, 2022</time>
+                                </p>
                             </div>
-                        </li>
+                        </div>
 
-                        <!-- Nav Item - Alerts -->
+                    </article>
+                </div><!-- End post list item -->
 
+                <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <article>
 
-                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <div class="post-img">
+                            <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
+                        </div>
 
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="{{ asset('img/undraw_profile.svg') }}">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
+                        <p class="post-category">Entertainment</p>
+
+                        <h2 class="title">
+                            <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et
+                                soluta</a>
+                        </h2>
+
+                        <div class="d-flex align-items-center">
+                            <img src="assets/img/blog/blog-author-3.jpg" alt=""
+                                class="img-fluid post-author-img flex-shrink-0">
+                            <div class="post-meta">
+                                <p class="post-author">Mark Dower</p>
+                                <p class="post-date">
+                                    <time datetime="2022-01-01">Jun 22, 2022</time>
+                                </p>
                             </div>
-                        </li>
+                        </div>
 
+                    </article>
+                </div><!-- End post list item -->
+
+            </div><!-- End recent posts list -->
+
+        </div>
+
+    </section>
+
+    <section id="about" class="about section">
+
+
+        <div class="container section-title" data-aos="fade-up">
+            <h2>About</h2>
+            <p>Biz haqimizda</p>
+        </div>
+
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        Bizning platformamiz – so'nggi yangiliklar, tahlillar va muhim voqealar bilan tanishtirishga
+                        qaratilgan onlayn maydon. Bizning maqsadimiz – sizni dolzarb ma'lumotlar bilan ta'minlash va
+                        yangiliklardan xabardor qilish.
+                    </p>
+                    <ul>
+                        <li><i class="bi bi-check2-circle"></i> <span>Dolzarb yangiliklarni tezkor va aniq
+                                yetkazamiz.</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Qiziqarli tahlillar va fikrlar bilan
+                                bo'lishamiz.</span></li>
+                        <li><i class="bi bi-check2-circle"></i> <span>Har bir maqola sizning qiziqishingizga mos
+                                keladi.</span></li>
                     </ul>
 
-                </nav>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Title</th>
-                                        <th>Body</th>
-                                        <th>Category</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="userTableBody">
-                                    @foreach ($models as $model)
-                                        <tr>
-                                            <th>{{ $model->id }}</th>
-                                            <td>{{ $model->title }}</td>
-                                            <td>{{ $model->body }}</td>
-                                            <td>{{ $model->category->name }}</td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <p>Biz har doim yangiliklarni tezkor va aniq yetkazishga intilamiz, shuningdek, sizga qiziqarli
+                        va muhim mavzular bo'yicha chuqur tahlillar taqdim etamiz. Har bir maqola va xabarda sizning
+                        qiziqishingizni inobatga olamiz.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <section id="contact" class="contact section">
+
+        <!-- Section Title -->
+        <div class="container section-title" data-aos="fade-up">
+            <h2>Contact</h2>
+            <p>Contact Us</p>
+        </div><!-- End Section Title -->
+
+        <div class="container" data-aos="fade" data-aos-delay="100">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4">
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                        <i class="bi bi-geo-alt flex-shrink-0"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Najot ta'lim Chilonzor</p>
                         </div>
-                    </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                        <i class="bi bi-telephone flex-shrink-0"></i>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+998 78 888-98-88</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
+                    <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                        <i class="bi bi-envelope flex-shrink-0"></i>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>najottalim@gmail.com</p>
+                        </div>
+                    </div><!-- End Info Item -->
+
                 </div>
+
+                <div class="col-lg-8">
+                    <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="row gy-4">
+
+                            <div class="col-md-6">
+                                <input type="text" name="name" class="form-control" placeholder="Your Name"
+                                    required="">
+                            </div>
+
+                            <div class="col-md-6 ">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email"
+                                    required="">
+                            </div>
+
+                            <div class="col-md-12">
+                                <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                            </div>
+
+                            <div class="col-md-12 text-center">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                                <button type="submit">Send Message</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div><!-- End Contact Form -->
+
             </div>
+
         </div>
-    </div>
 
+    </section><!-- /Contact Section -->
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/login">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+</main>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js"') }}'></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
-
-    <!-- Page level plugins -->
-    <script src="{{ asset('vendor/chart.js/Chart.min.js') }}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{{ asset('js/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('js/demo/chart-pie-demo.js') }}"></script>
-
-</body>
-
-</html>
+@endsection

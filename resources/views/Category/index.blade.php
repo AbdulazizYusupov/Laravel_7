@@ -37,19 +37,10 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-8">
                         <form action="{{ route('category.search') }}" method="get">
                             @csrf
-                            <input type="text" class="form-control" id="searchinput" name="search">
-                    </div>
-                    <div class="col-2">
-                        <button type="submit" class="btn btn-outline-success" name="ok"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="16" height="24" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                            </svg></button>
-                        </form>
+                            <input type="text" placeholder="Search" class="form-control" id="searchinput" name="search">
                     </div>
                 </div>
 
@@ -88,8 +79,8 @@
                                                                 Update
                                                                 category
                                                             </h1>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
                                                         </div>
                                                         <form action="{{ route('category.update', $model->id) }}"
                                                             method="POST">
@@ -98,14 +89,13 @@
                                                             <div class="modal-body">
                                                                 <input type="hidden" name="id"
                                                                     value="{{ $model->id }}">
-                                                                <input type="text" name="name"
+                                                                <input class="form-control" type="text" name="name"
                                                                     value="{{ $model->name }}">
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit"
-                                                                    class="btn btn-primary">Edit</button>
+                                                                <button type="submit" class="btn btn-primary">Edit</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -129,6 +119,11 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="col">
+                            <div class="me-3">
+                                {{ $models->links() }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@ class AuthController extends Controller
             'password' => 'required|min:6',
         ]);
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect('/category');
+            return redirect('/');
         }else{
             return redirect('login');
         }
